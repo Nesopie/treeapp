@@ -1,0 +1,32 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+deploy:
+    kubectl:
+        manifests:
+            - ./infra/k8s/*
+build:
+    local:
+        push: false
+    artifacts:
+        - image: nesopie/client
+          context: client
+          docker:
+              dockerfile: dockerfile
+          sync:
+              manual:
+                  - src: "**/*.ts"
+                    dest: .
+                  - src: "**/*.tsx"
+                    dest: .
+                  - src: "**/*.js"
+                    dest: .
+        - image: nesopie/api
+          context: api
+          docker:
+              dockerfile: dockerfile
+          sync:
+              manual:
+                  - src: "**/*.ts"
+                    dest: .
+                  - src: "**/*.js"
+                    dest: .

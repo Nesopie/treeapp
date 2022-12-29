@@ -1,0 +1,42 @@
+{
+    "subjects": [
+        {
+            "name": "Subject1",
+            "type": "Subject",
+            "children": [
+                {
+                    "name": "Lesson1",
+                    "type": "Lesson",
+                    "children": [
+                        {
+                            "name": "Module1",
+                            "type": "Module",
+                            "children": [
+                                {
+                                    "name": "Workbook1",
+                                    "type": "Workbook"
+                                },
+                                {
+                                    "name": "Workbook2",
+                                    "type": "Workbook"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Module2",
+                            "type": "Module"
+                        }
+                    ]
+                },
+                {
+                    "name": "Lesson2",
+                    "type": "Lesson"
+                }
+            ]
+        },
+        {
+            "name": "Subject2",
+            "type": "Subject"
+        }
+    ]
+}
